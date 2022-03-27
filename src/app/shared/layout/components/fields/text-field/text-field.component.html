@@ -1,0 +1,8 @@
+<div class="form-group">
+  <input autocomplete="off" mask="{{fieldMask}}" [dropSpecialCharacters]="fieldDropMask" #textField="ngModel" [type]="fieldType" [name]="fieldName" class="twitter-filed" [ngClass]="{'passowd-field': showPassword === false}" [id]="fieldId" [required]="isRequired" (input)="enviarValor()" [(ngModel)]="fieldNgModel">
+  <label [for]="fieldId">{{fieldLabel}}</label>
+  <div class="filed-icon-sect" *ngIf="isPassword">
+    <img src="../../../../../../assets/icons/eye-on-icon.svg" *ngIf="!showPassword" class="filed-icon" alt="" (click)="showPassword = true">
+    <img src="../../../../../../assets/icons/eye-off-icon.svg" *ngIf="showPassword" class="filed-icon" alt="" (click)="showPassword = false">
+  </div>
+</div>

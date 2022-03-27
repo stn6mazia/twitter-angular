@@ -1,0 +1,30 @@
+<div class="row pt-32px justify-content-center ">
+  <div class="col">
+    <app-text-field [fieldName]="loginField.fieldName" [fieldId]="loginField.fieldId"
+      [fieldLabel]="loginField.fieldLabel" [fieldType]="loginField.fieldType" [isRequired]="loginField.isRequired"
+      [fieldMask]="loginField.fieldMask" [fieldDropMask]="true" (value)="session.login = $event"></app-text-field>
+  </div>
+</div>
+<div class="row pt-8px justify-content-center ">
+  <div class="col">
+    <app-text-field [fieldName]="passwordField.fieldName" [fieldId]="passwordField.fieldId"
+      [fieldLabel]="passwordField.fieldLabel" [fieldType]="passwordField.fieldType"
+      [isRequired]="passwordField.isRequired" [fieldHaveMask]="passwordField.fieldHaveMask"
+      [fieldMask]="passwordField.fieldMask" [isPassword]="passwordField.isPassword"
+      [showPassword]="passwordField.showPassword" (value)="session.password = $event"></app-text-field>
+  </div>
+</div>
+<div class="row pt-24px">
+  <div class="col">
+    <button class="btn btn-primary" (click)="login()">
+      LOGIN
+    </button>
+  </div>
+</div>
+<div class="row pt-16px">
+  <div class="col center">
+    <span class="f-under-line f-14px f-white link" routerLink="/register">
+      Create account
+    </span>
+  </div>
+</div>

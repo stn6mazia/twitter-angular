@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import url(../node_modules/bootstrap/dist/css/bootstrap.css);
+@import url(./app/shared/style/_mixins.scss);
+@import '~ngx-toastr/toastr';
+
+html body {
+    background-color: rgb(34, 34, 34) !important;
+    overflow-x: hidden;
+    height: 100vh;
+    width: 100%;
+}
+
+.main {
+    background-color: rgb(34, 34, 34) !important;
+    height: 100vh;
+    width: 100%;
+}

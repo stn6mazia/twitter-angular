@@ -1,0 +1,76 @@
+<div class="post-card" [ngClass]="{'hide': post.status}">
+  <div class="container">
+    <div class="row pt-16px">
+      <div class="col">
+        <app-avatar [currentUser]="post.author"></app-avatar>
+      </div>
+      <div class="col-1 right" *ngIf="currentUser.login === post.author.login">
+        <fa-icon class="f-white f-32px mr-16px" [icon]="faTrash" (click)="showDeleteSection = true"></fa-icon>
+      </div>
+    </div>
+    <div class="row pt-16px pb-16px">
+      <div class="col">
+        <span class="f-white f-24px">
+          {{post.textPost}}
+        </span>
+      </div>
+    </div>
+    <div class="row justify-content-start align-items-center pt-16px pb-24px f-white">
+      <div class="col-2">
+        <span (click)="updateLikes()">
+          <fa-icon class="f-white f-32px mr-16px" [icon]="faHeart"></fa-icon> {{post.likes}}
+        </span>
+      </div>
+      <div class="col-2">
+        <span (click)="showComments = !showComments">
+          <fa-icon class="f-white f-32px mr-16px" [icon]="faComment"></fa-icon> {{post.comments.length}}
+        </span>
+      </div>
+      <div class="col-8 right">
+        <span class="f-white f-12px">
+          {{post.createdDate | publishMoment}}
+        </span>
+      </div>
+    </div>
+    <div *ngIf="showComments">
+      <div class="row pt-24px" *ngFor="let comment of post.comments">
+        <div class="col">
+          <app-comment-sect [comment]="comment"></app-comment-sect>
+        </div>
+      </div>
+      <div class="row align-items-center pt-16px pb-24px">
+        <div class="col">
+          <app-text-field [fieldName]="commentField.fieldName" [fieldId]="commentField.fieldId"
+            [fieldLabel]="commentField.fieldLabel" [fieldType]="commentField.fieldType" [fieldNgModel]="comment.text"
+            [isRequired]="commentField.isRequired" [fieldMask]="commentField.fieldMask" [fieldDropMask]="true"
+            (value)="comment.text = $event"></app-text-field>
+        </div>
+        <div class="col-1">
+          <fa-icon class="f-blue f-32px mr-16px" [icon]="faPlane" [ngClass]="{'f-gray': comment.text === ''}"
+            (click)="createComment()"></fa-icon>
+        </div>
+      </div>
+    </div>
+    <div class="row center" *ngIf="showDeleteSection">
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <span class="f-white f-1px">
+              Do you want to delete this tweet?
+            </span>
+          </div>
+        </div>
+        <div class="row justify-content-center align-items-center pt-16px pb-24px">
+          <div class="col-3">
+            <span class="f-under-line link" (click)="showDeleteSection = false">
+              Cancel
+            </span>
+          </div>
+          <div class="col-3">
+            <button class="btn btn-danger" (click)="deletePost()">DELETE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

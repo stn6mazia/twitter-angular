@@ -1,0 +1,15 @@
+<app-header [currentUser]="currentUser"></app-header>
+<div class="container">
+  <div class="row pt-40px">
+    <div class="col">
+      <app-post-section (emitedPost)="newPost($event)" [currentUser]="currentUser"></app-post-section>
+    </div>
+  </div>
+</div>
+<div class="container pt-32px pb-32px" *ngIf="posts.length > 0">
+  <div class="row pt-16px pb-16px" *ngFor="let post of posts" [ngClass]="{'hide': !post.status}">
+    <div class="col">
+      <app-post-card [currentUser]="currentUser" [post]="post"></app-post-card>
+    </div>
+  </div>
+</div>

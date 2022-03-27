@@ -1,0 +1,23 @@
+<div class="comment-sect">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <span class="f-white">
+          {{comment.author.login}}
+        </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <span class="f-white">
+          {{comment.text}}
+        </span>
+      </div>
+      <div class="col-3 right">
+        <span class="f-white">
+          {{comment.createdDate | publishMoment}}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

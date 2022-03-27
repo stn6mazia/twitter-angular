@@ -1,0 +1,22 @@
+<div class="header">
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      <div class="col left">
+        <fa-icon class="f-blue f-32px mr-16px" [icon]="faTwitter"></fa-icon>
+        <span class="f-white f-32px">Twitter <span class="f-12px f-white">(Developed by: FrontSennin)</span></span>
+      </div>
+      <div class="col-5 right">
+        <div class="row align-items-center">
+          <div class="col">
+            <span class="f-24px">            
+              <app-avatar [currentUser]="currentUser"></app-avatar>
+            </span>
+          </div>
+          <div class="col-2 center">
+            <fa-icon class="f-blue f-24px ml-16px link" [icon]="faLogout" (click)="logout()"></fa-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

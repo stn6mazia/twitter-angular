@@ -1,0 +1,9 @@
+<div class="textarea-form-group">
+  <textarea rows="3" maxlength="130" autocomplete="off" mask="{{fieldMask}}" [dropSpecialCharacters]="fieldDropMask"
+    #textField="ngModel" [name]="fieldName" [ngClass]="{'passowd-field': showPassword === false}" [id]="fieldId"
+    [required]="isRequired" (input)="enviarValor()" [(ngModel)]="fieldNgModel"></textarea>
+  <label [for]="fieldId">{{fieldLabel}}</label>
+  <div class="field-limit-sect">
+    <span class="f-gray f-12px">{{fieldNgModel.length}}/130</span>
+  </div>
+</div>
