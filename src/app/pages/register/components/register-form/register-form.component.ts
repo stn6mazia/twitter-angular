@@ -91,7 +91,8 @@ export class RegisterFormComponent implements OnInit {
     this.registeredUsers.push(body)
 
     sessionStorage.setItem('registeredUsers', JSON.stringify(this.registeredUsers))
-    this.router.navigateByUrl('login')
+    sessionStorage.setItem('session', JSON.stringify(body))
+    this.router.navigateByUrl('feed')
   }
 
   checkEqualPassword(password: string, confirmPassword: string) {

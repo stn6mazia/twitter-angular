@@ -5,27 +5,27 @@
       [fieldMask]="loginField.fieldMask" [fieldDropMask]="true" (value)="user.login = $event"></app-text-field>
   </div>
 </div>
-<div class="row pt-32px justify-content-center ">
-  <div class="col">
+<div class="row justify-content-center ">
+  <div class="col-sm-12 col-md-6 pt-32px">
     <app-text-field [fieldName]="nameField.fieldName" [fieldId]="nameField.fieldId"
       [fieldLabel]="nameField.fieldLabel" [fieldType]="nameField.fieldType" [isRequired]="nameField.isRequired"
       [fieldMask]="nameField.fieldMask" [fieldDropMask]="true" (value)="user.name = $event"></app-text-field>
   </div>
-  <div class="col">
+  <div class="col-sm-12 col-md-6 pt-32px">
     <app-text-field [fieldName]="emailField.fieldName" [fieldId]="emailField.fieldId"
       [fieldLabel]="emailField.fieldLabel" [fieldType]="emailField.fieldType" [isRequired]="emailField.isRequired"
       [fieldMask]="emailField.fieldMask" [fieldDropMask]="true" (value)="user.email = $event"></app-text-field>
   </div>
 </div>
-<div class="row pt-32px justify-content-center ">
-  <div class="col">
+<div class="row justify-content-center ">
+  <div class="col-sm-12 col-md-6 pt-32px">
     <app-text-field [fieldName]="passwordField.fieldName" [fieldId]="passwordField.fieldId"
       [fieldLabel]="passwordField.fieldLabel" [fieldType]="passwordField.fieldType"
       [isRequired]="passwordField.isRequired" [fieldHaveMask]="passwordField.fieldHaveMask"
       [fieldMask]="passwordField.fieldMask" [isPassword]="passwordField.isPassword"
       [showPassword]="passwordField.showPassword" (value)="user.password = $event"></app-text-field>
   </div>
-  <div class="col">
+  <div class="col-sm-12 col-md-6 pt-32px">
     <app-text-field [fieldName]="confirmPasswordField.fieldName" [fieldId]="confirmPasswordField.fieldId"
       [fieldLabel]="confirmPasswordField.fieldLabel" [fieldType]="confirmPasswordField.fieldType"
       [isRequired]="confirmPasswordField.isRequired" [fieldHaveMask]="confirmPasswordField.fieldHaveMask"
@@ -43,7 +43,7 @@
 <div class="row pt-16px">
   <div class="col center">
     <span class="f-under-line f-14px f-white link" routerLink="/login">
-      Have an account? Make Login.
+      Have an account? Login.
     </span>
   </div>
 </div>

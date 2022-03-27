@@ -3,16 +3,19 @@
     <div class="row align-items-center justify-content-center">
       <div class="col left">
         <fa-icon class="f-blue f-32px mr-16px" [icon]="faTwitter"></fa-icon>
-        <span class="f-white f-32px">Twitter <span class="f-12px f-white">(Developed by: FrontSennin)</span></span>
+        <span class="f-white f-32px desktop">Twitter <span class="f-12px f-white">(Developed by: FrontSennin)</span></span>
       </div>
       <div class="col-5 right">
         <div class="row align-items-center">
-          <div class="col">
+          <div class="col desktop">
             <span class="f-24px">            
-              <app-avatar [currentUser]="currentUser"></app-avatar>
+              <app-avatar [showName]="true" [currentUser]="currentUser"></app-avatar>
             </span>
           </div>
-          <div class="col-2 center">
+          <div class="col-2 right desktop">
+            <fa-icon class="f-blue f-24px ml-16px link" [icon]="faLogout" (click)="logout()"></fa-icon>
+          </div>
+          <div class="col right mobile">
             <fa-icon class="f-blue f-24px ml-16px link" [icon]="faLogout" (click)="logout()"></fa-icon>
           </div>
         </div>

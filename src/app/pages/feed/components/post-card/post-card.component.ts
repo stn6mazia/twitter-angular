@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { faCommentDots, faHeart, faPaperPlane, faTrash } from '@fortawesome/free-solid-svg-icons';
 import * as moment from 'moment';
 import { Comment } from 'src/app/shared/models/comment';
@@ -13,6 +13,8 @@ import { User } from 'src/app/shared/models/user';
 export class PostCardComponent implements OnInit {
   @Input() post: Post = new Post();
   @Input() currentUser: User = new User()
+
+  @Output() emitedPosts = new EventEmitter<Post[]>()
 
   posts:Post[] = []
 
@@ -88,5 +90,8 @@ export class PostCardComponent implements OnInit {
     }
         
     sessionStorage.setItem('posts', JSON.stringify(this.posts))
+    this.emitedPosts.emit(this.posts.sort((a: Post, b: Post) => {
+      return b.id - a.id;
+    }))
   }
 }

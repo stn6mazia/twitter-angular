@@ -8,6 +8,7 @@ import { User } from 'src/app/shared/models/user';
 })
 export class AvatarComponent implements OnInit {
   @Input() currentUser:User = new User()
+  @Input() showName:boolean = true
 
   constructor() { }
 
